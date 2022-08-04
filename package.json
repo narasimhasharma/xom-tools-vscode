@@ -1,0 +1,90 @@
+{
+  "name": "apex-tools",
+	"displayName": "OM Apex Tools",
+	"description": "Apex Tools for Order Management",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onCommand:apex-tools.analyze",
+        "onCommand:apex-tools.verify-decomp",
+        "onCommand:apex-tools.verify-orch"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "apex-tools.analyze",
+				"title": "Analyze Apex Log"
+			},
+			{
+				"command": "apex-tools.verify-decomp",
+				"title": "Verify Decomposition"
+			},
+			{
+				"command": "apex-tools.verify-orch",
+				"title": "Verify Orchestration"
+			},
+			{
+				"command": "apex-tools.verify-key-events",
+				"title": "Verify Key Events"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"submenu": "alm.apex-tools",
+					"group": "navigation"
+				}
+			],
+			"alm.apex-tools": [
+				{
+					"when": "!inOutput",
+					"command": "apex-tools.verify-decomp",
+					"group": "navigation"
+				},
+				{
+					"when": "!inOutput",
+					"command": "apex-tools.verify-orch",
+					"group": "navigation"
+				},
+				{
+					"when": "!inOutput",
+					"command": "apex-tools.verify-key-events",
+					"group": "navigation"
+				}
+			]
+		},
+		"submenus": [
+			{
+			  "id": "alm.apex-tools",
+			  "label": "Apex Tools"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.64.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.9.1",
+		"@typescript-eslint/parser": "^5.9.1",
+		"eslint": "^8.6.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.1.3",
+		"typescript": "^4.5.4",
+		"@vscode/test-electron": "^2.0.3"
+	}
+}
