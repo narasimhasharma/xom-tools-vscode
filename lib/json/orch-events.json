@@ -1,0 +1,70 @@
+
+{
+    "name": "Original Order - Submit Events",
+    "events": [
+      {
+        "text": "orchestrationItem to process: ",
+        "description": "Process Orchestration Item"
+      },
+      {
+        "text": "Executing ",
+        "description": "Executing Orchestration Item"
+      },
+      {
+        "text": "canRetry() true for item",
+        "description": "Check Orchestration Item retry"
+      },
+      {
+        "text": "Setting running timestamp for",
+        "description": "Set Running timestamp"
+      },
+      {
+        "text": "Updating (",
+        "description": "Update Orchestration Item"
+      },
+      {
+        "text": "----- Call executeBatch",
+        "description": "Execute Orchestration Item"
+      },
+      {
+        "text": "Completing item",
+        "description": "Complete Orchestration Item"
+      },
+      {
+        "text": "-- Returning candidateIdSet size",
+        "description": "Candidate set of Pending items"
+      },
+      {
+        "text": "-- publishing ready items",
+        "description": "Publish events for ready items"
+      },
+      {
+        "text": "Skipped item ",
+        "description": "Skipping Orchestration item"
+      },
+      {
+        "text": "========== Exit : executeItem() ==========",
+        "description": "Executed Orchestration item"
+      },
+      {
+        "text": "========== Exit : setReadyState() ==========",
+        "description": "Set Ready state completed"
+      },
+      {
+        "text": "========== Exit : refreshOrderProgression ==========",
+        "description": "Refresh Order progression"
+      },
+      {
+        "text": "-- do we have FRLs to activate ?",
+        "description": "Activate FRLs"
+      },
+      {
+        "text": " -- do we have cpq call to do ? :",
+        "description": "Odin Notification to CPQ"
+      },
+      {
+        "text": "========== Exit : checkActivations ==========",
+        "description": "Check Activations completed"
+      }
+    ]
+}

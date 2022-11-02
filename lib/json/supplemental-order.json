@@ -1,0 +1,101 @@
+{
+    "name": "Supplemental Order - Submit Events",
+    "events": [
+      {
+        "text": "========== Exit : checkIfChangesAllowedPreDecomposition ==========",
+        "description": "Check if changes are allowed"
+      },
+      {
+        "text": "-- After getObject for Order --",
+        "description": "Loading Order object completed"
+      },
+      {
+        "text": "========== Enter : decomposeOrder  ==========",
+        "description": "Start Decomposition"
+      },
+      {
+        "text": "========== Exit : propagatePONR ==========",
+        "description": "Loading Order items completed"
+      },
+      {
+        "text": "========== Exit : incrementalScopeFilter  ==========",
+        "description": "Incremental Scope Filtered"
+      },
+      {
+        "text": "========== Exit : filterDecompositionsRulesAndCollectAccountSpecIds ==========",
+        "description": "Filter Account scope products"
+      },
+      {
+        "text": "-- Decomposition -- After buildToBeTree -",
+        "description": "ToBe Tree Created"
+      },
+      {
+        "text": "-- Decomposition -- After buildAsIsTree -- ",
+        "description": "AsIs Tree Created"
+      },
+      {
+        "text": "-- Decomposition -- After buildDeltaAssetTree -- ",
+        "description": "DeltaAsset Tree Created"
+      },
+      {
+        "text": "========== Exit : createAndUpdateFulfilmentRequests  ==========",
+        "description": "Created FRs, FRLs"
+      },
+      {
+        "text": "========== Exit : decomposeOrder  ==========",
+        "description": "Decomposition completed"
+      },
+      {
+        "text": "========== Enter : updateSupersededFRAndFRLs ==========",
+        "description": "Update Superseded FRs, FRLs Completed"
+      },
+      {
+        "text": "========== Enter : updatePlan ==========",
+        "description": "Start Updating the Orchestration Plan"
+      },
+      {
+        "text": "========== Exit : collectRootOrderItemInfo ==========",
+        "description": "Loading OIs completed"
+      },
+      {
+        "text": "========== Exit : evaluateAndMatchScenarios ==========",
+        "description": "Matching Orchestration scenarios completed"
+      },
+      {
+        "text": "========== Exit : calculatePlanDiff ==========",
+        "description": "Orchestration plan diff calculation completed"
+      },
+      {
+        "text": "========== Exit : applyDiffActionToPlan ==========",
+        "description": "Applying diff action to plan completed"
+      },
+      {
+        "text": "========== Exit : resolveDependencies ==========",
+        "description": "Resolving Orchestration item Dependencies completed"
+      },
+      {
+        "text": "========== Exit : insertCompensationPlans ==========",
+        "description": "Insert Compensation plans completed"
+      },
+      {
+        "text": "========== Enter : afterUpdate : updateWorkingSet() ==========",
+        "description": "Unfreezing Orchestration Plan"
+      },
+      {
+        "text": "========== Exit : refreshOrderProgression ==========",
+        "description": "Refresh Order progression"
+      },
+      {
+        "text": "-- do we have FRLs to activate ?",
+        "description": "Activate FRLs"
+      },
+      {
+        "text": " -- do we have cpq call to do ? :",
+        "description": "Odin Notification to CPQ"
+      },
+      {
+        "text": "========== Exit : checkActivations ==========",
+        "description": "Check Activations completed"
+      }
+    ]
+  }

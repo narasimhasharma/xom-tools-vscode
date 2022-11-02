@@ -1,6 +1,6 @@
-# apex-tools README
+# README
 
-Extension "apex-tools"
+Extension "sfiapex-tools"
 
 # Build/Install
 

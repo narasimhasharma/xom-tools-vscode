@@ -1,0 +1,89 @@
+{
+  "name": "Original Order - Submit Events",
+  "events": [
+    {
+      "text": "-- After getObject for Order --",
+      "description": "Loading Order object completed (Decomposition)"
+    },
+    {
+      "text": "========== Exit : propagatePONR ==========",
+      "description": "Loading Order items completed"
+    },
+    {
+      "text": "========== Exit : incrementalScopeFilter  ==========",
+      "description": "Incremental Scope Filtered"
+    },
+    {
+      "text": "========== Exit : filterDecompositionsRulesAndCollectAccountSpecIds ==========",
+      "description": "Filter Account scope products"
+    },
+    {
+      "text": "-- Decomposition -- After buildToBeTree -",
+      "description": "ToBe Tree Created"
+    },
+    {
+      "text": "-- Decomposition -- After buildAsIsTree -- ",
+      "description": "AsIs Tree Created"
+    },
+    {
+      "text": "-- Decomposition -- After buildDeltaAssetTree -- ",
+      "description": "DeltaAsset Tree Created"
+    },
+    {
+      "text": "========== Exit : createAndUpdateFulfilmentRequests  ==========",
+      "description": "Created FRs, FRLs"
+    },
+    {
+      "text": "========== Exit : decomposeOrder  ==========",
+      "description": "Decomposition completed"
+    },
+    {
+      "text": "========== Enter : composeOrchestrationPlan(Id) ==========",
+      "description": "Compose Orchestration plan"
+    },
+    {
+      "text": "-- After getObject for Order --",
+      "description": "Loading Order object completed (Composing Orchestration plan)"
+    },
+    {
+      "text": "========== Exit : loadFulfilmentRequests ==========",
+      "description": "Loading FRs completed"
+    },
+    {
+      "text": "========== Exit : collectRootOrderItemInfo ==========",
+      "description": "Loading OIs completed"
+    },
+    {
+      "text": "========== Exit : evaluateAndMatchScenarios ==========",
+      "description": "Matching Orchestration scenarios completed"
+    },
+    {
+      "text": "========== Exit : calculatePlanOriginal ==========",
+      "description": "Orchestration plan calculation completed"
+    },
+    {
+      "text": "&&&& startItems",
+      "description": "Starting Orchestration plan"
+    },
+    {
+      "text": "========== Exit : @aura setReadyState() ==========",
+      "description": "Set Ready state on Start items & Skipped Start items completed"
+    },
+    {
+      "text": "========== Exit : refreshOrderProgression ==========",
+      "description": "Refresh Order progression"
+    },
+    {
+      "text": "-- do we have FRLs to activate ?",
+      "description": "Activate FRLs"
+    },
+    {
+      "text": " -- do we have cpq call to do ? :",
+      "description": "Odin Notification to CPQ"
+    },
+    {
+      "text": "========== Exit : checkActivations ==========",
+      "description": "Check Activations completed"
+    }
+  ]
+}
