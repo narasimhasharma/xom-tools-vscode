@@ -8,12 +8,14 @@ function renderHtml(content, name) {
     const extensionPath = root.extensionContext.extensionPath;
     const panel = vscode.window.createWebviewPanel(name, name, vscode.ViewColumn.One, 
                     {retainContextWhenHidden: true, enableFindWidget:true, enableScripts: true, localResourceRoots: [vscode.Uri.file(path.join(extensionPath, '/media'))]});
-    let styleSrc = vscode.Uri.file(path.join(extensionPath, '/media/dispStyle.css')).with({ scheme: 'vscode-resource' });
-    let scriptSrc = vscode.Uri.file(path.join(extensionPath, '/media/dispScript.js')).with({ scheme: 'vscode-resource' });
+        
+    let styleSrc = panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionPath, '/media/dispStyle.css')));
+    let scriptSrc = panel.webview.asWebviewUri(vscode.Uri.file(path.join(extensionPath, '/media/dispScript.js')));
+                    
     let vhtmlOutput = `<!DOCTYPE html>
                             <html>
                                 <head>
-                                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
                                     <title>${name}</title>
                                     <link rel="stylesheet" type="text/css" href="${styleSrc}">
                                 </head>
@@ -42,7 +44,7 @@ function renderHtml(content, name) {
     //                                     </body>
     //                                 </html>`;
     //         const dirPath = dirUri[0].fsPath;
-    //         fs.writeFile(path.join(dirPath, 'cpq.html'), htmlOutput, (err) => {
+    //         fs.writeFile(path.join(dirPath, 'output.html'), htmlOutput, (err) => {
     //             if (err) throw err;
     //         });
     //     });
