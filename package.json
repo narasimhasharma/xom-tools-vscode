@@ -14,7 +14,8 @@
     "onCommand:sfiapex.analyseSupplementalSubmit",
     "onCommand:sfiapex.analyseOrchestration",
     "onCommand:sfiapex.visualiseCpqLog",
-    "onCommand:sfiapex.viewIntfImpls"
+    "onCommand:sfiapex.viewIntfImpls",
+    "onCommand:sfiapex.viewSettingsToggles"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -38,6 +39,10 @@
       {
         "command": "sfiapex.viewIntfImpls",
         "title": "CPQ View Interface Impls"
+      },
+      {
+        "command": "sfiapex.viewSettingsToggles",
+        "title": "CPQ View Settings, Toggles"
       }
     ],
     "menus": {
@@ -72,6 +77,11 @@
           "when": "!inOutput",
           "command": "sfiapex.viewIntfImpls",
           "group": "navigation@5"
+        },
+        {
+          "when": "!inOutput",
+          "command": "sfiapex.viewSettingsToggles",
+          "group": "navigation@6"
         }
       ]
     },

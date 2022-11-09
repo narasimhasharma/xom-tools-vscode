@@ -30,6 +30,9 @@ function activate(context) {
 
 	let viewIntfImpls = vscode.commands.registerCommand('sfiapex.viewIntfImpls', cpqVisualise.viewIntfImplsCmd);
 	context.subscriptions.push(viewIntfImpls);
+
+	let viewSettingsToggles = vscode.commands.registerCommand('sfiapex.viewSettingsToggles', cpqVisualise.viewSettingsTogglesCmd);
+	context.subscriptions.push(viewSettingsToggles);
 }
 
 function deactivate() {}
