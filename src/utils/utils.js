@@ -24,33 +24,29 @@ function renderHtml(content, name) {
                                     <script src="${scriptSrc}"></script>        
                                 </body>
                             </html>`;
-    panel.webview.html = vhtmlOutput;
+    panel.webview.html = vhtmlOutput;                 
+}
+
+function saveOutput(contentArr, filename) {
                                     
-    // const fs = require('fs');
-    // vscode.window.showOpenDialog({canSelectFolders: true})
-    //     .then(dirUri => {
-    //         let styleSrc = path.join(extensionPath, '/media/dispStyle.css');
-    //         let scriptSrc = path.join(extensionPath, '/media/dispScript.js');
-    //         let htmlOutput = `<!DOCTYPE html>
-    //                                 <html>
-    //                                     <head>
-    //                                         <meta name="viewport" content="width=device-width, initial-scale=1">
-    //                                         <title>${name}</title>
-    //                                         <link rel="stylesheet" type="text/css" href="${styleSrc}">
-    //                                     </head>
-    //                                     <body style="font-family:Helvetica;">     
-    //                                         ${content}
-    //                                         <script src="${scriptSrc}"></script>        
-    //                                     </body>
-    //                                 </html>`;
-    //         const dirPath = dirUri[0].fsPath;
-    //         fs.writeFile(path.join(dirPath, 'output.html'), htmlOutput, (err) => {
-    //             if (err) throw err;
-    //         });
-    //     });
-                 
+    const fs = require('fs');
+    const path = require('path');
+    const vscode = require('vscode');
+    vscode.window.showOpenDialog({canSelectFolders: true})
+        .then(dirUri => {
+            const dirPath = dirUri[0].fsPath;
+            // fs.writeFile(path.join(dirPath, filename), content, (err) => {
+            //     if (err) throw err;
+            // });
+            var logStream = fs.createWriteStream(path.join(dirPath, filename), {flags: 'w'});
+            contentArr.forEach(content => {
+                logStream.write(content);
+            })
+            logStream.end('-----------------');
+        });
 }
 
 module.exports = {
-    renderHtml
+    renderHtml,
+    saveOutput
 }

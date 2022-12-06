@@ -15,7 +15,8 @@
     "onCommand:sfiapex.analyseOrchestration",
     "onCommand:sfiapex.visualiseCpqLog",
     "onCommand:sfiapex.viewIntfImpls",
-    "onCommand:sfiapex.viewSettingsToggles"
+    "onCommand:sfiapex.viewSettingsToggles",
+    "onCommand:sfiapex.analyseTimeJumps"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -43,6 +44,10 @@
       {
         "command": "sfiapex.viewSettingsToggles",
         "title": "CPQ View Settings, Toggles"
+      },
+      {
+        "command": "sfiapex.analyseTimeJumps",
+        "title": "Analyse Time Jumps"
       }
     ],
     "menus": {
@@ -82,6 +87,11 @@
           "when": "!inOutput",
           "command": "sfiapex.viewSettingsToggles",
           "group": "navigation@6"
+        },
+        {
+          "when": "!inOutput",
+          "command": "sfiapex.analyseTimeJumps",
+          "group": "navigation@7"
         }
       ]
     },
@@ -109,6 +119,7 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "node-fetch": "^2.6.1"
   }
 }

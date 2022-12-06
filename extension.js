@@ -33,6 +33,9 @@ function activate(context) {
 
 	let viewSettingsToggles = vscode.commands.registerCommand('sfiapex.viewSettingsToggles', cpqVisualise.viewSettingsTogglesCmd);
 	context.subscriptions.push(viewSettingsToggles);
+
+	let analyseTimeJumps = vscode.commands.registerCommand('sfiapex.analyseTimeJumps', cpqVisualise.analyseTimeJumpsCmd);
+	context.subscriptions.push(analyseTimeJumps);
 }
 
 function deactivate() {}
