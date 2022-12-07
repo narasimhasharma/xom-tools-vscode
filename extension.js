@@ -36,6 +36,12 @@ function activate(context) {
 
 	let analyseTimeJumps = vscode.commands.registerCommand('sfiapex.analyseTimeJumps', cpqVisualise.analyseTimeJumpsCmd);
 	context.subscriptions.push(analyseTimeJumps);
+
+	let analyseRecurringCalls = vscode.commands.registerCommand('sfiapex.analyseRecurringCalls', cpqVisualise.analyseRecurringCallsCmd);
+	context.subscriptions.push(analyseRecurringCalls);
+
+	let analyseMethodTimes = vscode.commands.registerCommand('sfiapex.analyseMethodTimes', cpqVisualise.analyseMethodTimesCmd);
+	context.subscriptions.push(analyseMethodTimes);
 }
 
 function deactivate() {}

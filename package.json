@@ -16,7 +16,9 @@
     "onCommand:sfiapex.visualiseCpqLog",
     "onCommand:sfiapex.viewIntfImpls",
     "onCommand:sfiapex.viewSettingsToggles",
-    "onCommand:sfiapex.analyseTimeJumps"
+    "onCommand:sfiapex.analyseTimeJumps",
+    "onCommand:sfiapex.analyseRecurringCalls",
+    "onCommand:sfiapex.analyseMethodTimes"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -48,6 +50,14 @@
       {
         "command": "sfiapex.analyseTimeJumps",
         "title": "Analyse Time Jumps"
+      },
+      {
+        "command": "sfiapex.analyseRecurringCalls",
+        "title": "Analyse Recurring Calls"
+      },
+      {
+        "command": "sfiapex.analyseMethodTimes",
+        "title": "Analyse Method Execution Time"
       }
     ],
     "menus": {
@@ -92,6 +102,16 @@
           "when": "!inOutput",
           "command": "sfiapex.analyseTimeJumps",
           "group": "navigation@7"
+        },
+        {
+          "when": "!inOutput",
+          "command": "sfiapex.analyseRecurringCalls",
+          "group": "navigation@8"
+        },
+        {
+          "when": "!inOutput",
+          "command": "sfiapex.analyseMethodTimes",
+          "group": "navigation@9"
         }
       ]
     },
