@@ -13,7 +13,7 @@
     "onCommand:sfiapex.analyseOriginalSubmit",
     "onCommand:sfiapex.analyseSupplementalSubmit",
     "onCommand:sfiapex.analyseOrchestration",
-    "onCommand:sfiapex.visualiseCpqLog",
+    "onCommand:sfiapex.processCpqLog",
     "onCommand:sfiapex.viewIntfImpls",
     "onCommand:sfiapex.viewSettingsToggles",
     "onCommand:sfiapex.analyseTimeJumps",
@@ -36,8 +36,8 @@
         "title": "OM Orchestration"
       },
       {
-        "command": "sfiapex.visualiseCpqLog",
-        "title": "CPQ Visualise Log"
+        "command": "sfiapex.processCpqLog",
+        "title": "CPQ Process Log"
       },
       {
         "command": "sfiapex.viewIntfImpls",
@@ -85,7 +85,7 @@
         },
         {
           "when": "!inOutput",
-          "command": "sfiapex.visualiseCpqLog",
+          "command": "sfiapex.processCpqLog",
           "group": "navigation@4"
         },
         {

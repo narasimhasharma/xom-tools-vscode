@@ -29,7 +29,7 @@
 
 .panel {
     padding: 0 18px;
-    font-size: 12px;
+    font-size: 14px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

@@ -25,8 +25,8 @@ function activate(context) {
 	let analyseOrderOrchestration = vscode.commands.registerCommand('sfiapex.analyseOrchestration', orchestration.analyseOrderOrchestrationCmd);
 	context.subscriptions.push(analyseOrderOrchestration);
 
-	let visualiseCpqLog = vscode.commands.registerCommand('sfiapex.visualiseCpqLog', cpqVisualise.visualiseCpqLogCmd);
-	context.subscriptions.push(visualiseCpqLog);
+	let processCpqLog = vscode.commands.registerCommand('sfiapex.processCpqLog', cpqVisualise.processCpqLogCmd);
+	context.subscriptions.push(processCpqLog);
 
 	let viewIntfImpls = vscode.commands.registerCommand('sfiapex.viewIntfImpls', cpqVisualise.viewIntfImplsCmd);
 	context.subscriptions.push(viewIntfImpls);
