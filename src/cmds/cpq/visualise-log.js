@@ -1,12 +1,23 @@
+function getExtnBasePath() {
+
+    const vscode = require('vscode');
+    for(let extn of vscode.extensions.all) {
+        if(extn.id.includes('sfiapex')) {
+            let basePath = vscode.extensions.getExtension(extn.id).extensionUri.path;
+            return basePath;
+        }
+    }
+}
+
 function visualiseCpqLogCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -14,21 +25,21 @@ function visualiseCpqLogCmd() {
     };
 
     root.window.appendLine('Started Processing CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.visualiseLog(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.visualiseLog(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
     root.window.appendLine('Completed Processing CPQ log');
 }
 
 function processCpqLogCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
+    
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -36,21 +47,20 @@ function processCpqLogCmd() {
     };
 
     root.window.appendLine('Started Processing CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.processCpqLog(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.processCpqLog(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
     root.window.appendLine('Completed Processing CPQ log');
 }
 
 function viewIntfImplsCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -58,21 +68,20 @@ function viewIntfImplsCmd() {
     };
 
     root.window.appendLine('Started Processing CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.viewIntfImpls(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.viewIntfImpls(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
     root.window.appendLine('Completed Processing CPQ log');
 }
 
 function viewSettingsTogglesCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -80,21 +89,20 @@ function viewSettingsTogglesCmd() {
     };
 
     root.window.appendLine('Started Processing CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.viewSettingsToggles(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.viewSettingsToggles(lineAt, lineCount, utils.renderHtml, root.window.appendLine);
     root.window.appendLine('Completed Processing CPQ log');
 }
 
 function analyseTimeJumpsCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -102,21 +110,20 @@ function analyseTimeJumpsCmd() {
     };
 
     root.window.appendLine('Started Processing CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.analyseTimeJumps(lineAt, lineCount, utils.saveOutput, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.analyseTimeJumps(lineAt, lineCount, utils.saveOutput, root.window.appendLine);
     root.window.appendLine('Completed Processing CPQ log');
 }
 
 function analyseRecurringCallsCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -124,21 +131,20 @@ function analyseRecurringCallsCmd() {
     };
 
     root.window.appendLine('Started Processing CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.analyseRecurringCalls(lineAt, lineCount, utils.saveOutput, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.analyseRecurringCalls(lineAt, lineCount, utils.saveOutput, root.window.appendLine);
     root.window.appendLine('Completed Processing CPQ log');
 }
 
 function analyseMethodTimesCmd() {
 
     const vscode = require('vscode');
-    const root = require('../../../extension');
-    const utils = require('../../utils/utils');
+    const root = require(getExtnBasePath() +'/extension');
+    const utils = require(getExtnBasePath() +'/src/utils/utils');
     const path = require('path');
     
     const extensionPath = root.extensionContext.extensionPath;
-    const cpqjsPath = path.join(extensionPath, '/lib/cpq.mjs');
+    const cpqjsPath = path.join(extensionPath, '/lib/cpq.js');
     const editor = vscode.window.activeTextEditor;
     const lineCount = editor.document.lineCount;
     const lineAt = (i) => {
@@ -146,9 +152,8 @@ function analyseMethodTimesCmd() {
     };
 
     root.window.appendLine('Started Processing Times of CPQ log');
-    import (cpqjsPath).then(cpqJs => {
-        cpqJs.analyseMethodTimes(lineAt, lineCount, utils.saveOutput, root.window.appendLine);
-    });
+    const cpqJs = require(cpqjsPath);
+    cpqJs.analyseMethodTimes(lineAt, lineCount, utils.saveOutput, root.window.appendLine);
     root.window.appendLine('Completed Processing Times of CPQ log');
 }
 

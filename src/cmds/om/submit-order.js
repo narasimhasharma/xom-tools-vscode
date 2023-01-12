@@ -30,10 +30,9 @@ function analyseSubmitOrderCmd(fileName) {
             root.window.appendLine(err);
             throw err;
         }
-        const omjsPath = path.join(extensionPath, '/lib/om.mjs');
-        import (omjsPath).then(omJs => {
-            omJs.processDecompositionLog(eData, lineAt, lineCount, utils.renderHtml, root.window.appendLine);        
-        })
+        const omjsPath = path.join(extensionPath, '/lib/om.js');
+        const omJs = require(omjsPath);
+        omJs.processDecompositionLog(eData, lineAt, lineCount, utils.renderHtml, root.window.appendLine); 
     });
     root.window.appendLine('Completed Processing OM Submit Order logs');
 }
