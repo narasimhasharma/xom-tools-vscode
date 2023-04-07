@@ -7,7 +7,7 @@
         "description": "Process Orchestration Item"
       },
       {
-        "text": "Executing ",
+        "text": "Executing [(vlocity_cmt__OrchestrationItem__c",
         "description": "Executing Orchestration Item"
       },
       {
@@ -19,7 +19,7 @@
         "description": "Set Running timestamp"
       },
       {
-        "text": "Updating (",
+        "text": "Updating (vlocity_cmt__OrchestrationItem__c",
         "description": "Update Orchestration Item"
       },
       {
@@ -27,7 +27,7 @@
         "description": "Execute Orchestration Item"
       },
       {
-        "text": "Completing item",
+        "text": "Completing item [vlocity_cmt__OrchestrationItem__c",
         "description": "Complete Orchestration Item"
       },
       {
@@ -39,7 +39,7 @@
         "description": "Publish events for ready items"
       },
       {
-        "text": "Skipped item ",
+        "text": "Skipped item: vlocity_cmt__OrchestrationItem__c",
         "description": "Skipping Orchestration item"
       },
       {
